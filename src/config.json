@@ -1,0 +1,12 @@
+{
+    "apiPort": "5000",
+
+    "development": {
+        "db": {
+            "name": "shopping-ht",
+            "url": "ds253821.mlab.com:53821",
+            "user": "fdp2018modulo2",
+            "password": "modulo2"
+        }
+    }
+} 
