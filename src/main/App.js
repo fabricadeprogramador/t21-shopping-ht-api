@@ -6,6 +6,8 @@ const Cors = require("cors")
 const Config = require("../config.json");
 
 const UsuarioRoute = require("./route/UsuarioRoute");
+const EstabelecimentoRoute = require("./route/Estabelecimento");
+
 
 class App {
 
@@ -25,6 +27,8 @@ class App {
         });
 
         new UsuarioRoute(this.app);
+
+        new EstabelecimentoRoute(this.app)
 
         this.app.listen(`${Config.apiPort}`, () => {
             console.log(`API rodando na porta ${Config.apiPort}`);            
