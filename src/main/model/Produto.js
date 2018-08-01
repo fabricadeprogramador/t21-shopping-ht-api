@@ -8,6 +8,10 @@ class Produto extends Mongoose.Schema {
 
         super({
 
+            nome: {
+                type: String
+            },
+
             foto: {
                 type: String
             },
@@ -16,8 +20,8 @@ class Produto extends Mongoose.Schema {
                 type: String
             },
 
-            preco: {
-                type: String
+            valor: {
+                type: Number
             }
 
         });

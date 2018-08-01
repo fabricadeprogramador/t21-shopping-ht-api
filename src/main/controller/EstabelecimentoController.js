@@ -1,4 +1,5 @@
 'use strict'
+const Produto = require("../model/Produto")
 const EstabelecimentoModel = require("../model/Estabelecimento");
 const mongoose = require("mongoose");
 const estabelecimento = mongoose.model("Estabelecimento");

@@ -7,8 +7,9 @@ const Config = require("../config.json");
 
 const UsuarioRoute = require("./route/UsuarioRoute");
 const EstabelecimentoRoute = require("./route/Estabelecimento");
-
-
+const ProdutoRoute = require("./route/ProdutoRoute");
+const ClienteRoute = require("./route/ClienteRoute");
+const CompraRoute = require("./route/CompraRoute");
 class App {
 
     constructor() {
@@ -26,9 +27,12 @@ class App {
             useNewUrlParser: true
         });
 
+        // Instanciando as rotas
         new UsuarioRoute(this.app);
-
         new EstabelecimentoRoute(this.app)
+        new ProdutoRoute(this.app);
+        new ClienteRoute(this.app);
+        new CompraRoute(this.app);
 
         this.app.listen(`${Config.apiPort}`, () => {
             console.log(`API rodando na porta ${Config.apiPort}`);            
