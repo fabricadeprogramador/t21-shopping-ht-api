@@ -10,6 +10,7 @@ const EstabelecimentoRoute = require("./route/Estabelecimento");
 const ProdutoRoute = require("./route/ProdutoRoute");
 const ClienteRoute = require("./route/ClienteRoute");
 const CompraRoute = require("./route/CompraRoute");
+const FinanceiroRoute = require("./route/FinanceiroRoute");
 class App {
 
     constructor() {
@@ -33,9 +34,18 @@ class App {
         new ProdutoRoute(this.app);
         new ClienteRoute(this.app);
         new CompraRoute(this.app);
+        new FinanceiroRoute(this.app);
+
+        this.app.get("/", (req, res, next) => {
+            res.json({
+                System: "Shopping HT - API",
+                Version: "1.0.0",
+                Message: "Seja bem-vindo ao Sistema de Gerenciamento Shopping HT da High Tech"
+            })
+        });
 
         this.app.listen(`${Config.apiPort}`, () => {
-            console.log(`API rodando na porta ${Config.apiPort}`);            
+            console.log(`API rodando na porta ${global.config.porta}`);
         })
 
     }

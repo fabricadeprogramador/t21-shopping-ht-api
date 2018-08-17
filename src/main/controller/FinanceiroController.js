@@ -10,7 +10,9 @@ class FinanceiroController {
 
         try {
 
-            res.json(await Financeiro.find({}));
+            res
+                .json(await Financeiro.find({})
+                    .populate("estabelecimento"));
 
         } catch (error) {
 

@@ -23,15 +23,14 @@ class Financeiro extends Mongoose.Schema {
             },
 
             dataDeCriacao: {
-                type: Date(),
+                type: Date,
                 default: new Date().getDate(),
                 required: true
             },
 
             estabelecimento: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Estabelecimento',
-                required: true
+                type: Mongoose.Schema.Types.ObjectId,
+                ref: 'Estabelecimento'
             }
 
         });

@@ -4,7 +4,7 @@
   "description": "",
   "main": "App.js",
   "scripts": {
-    "dev": "node ./src/main/App.js",
+    "dev": "nodemon ./src/main/App.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,6 +13,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
-    "mongoose": "^5.2.5"
+    "mongoose": "^5.2.5",
+    "nodemon": "^1.18.3"
   }
 }
