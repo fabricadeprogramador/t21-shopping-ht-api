@@ -45,7 +45,7 @@ class App {
         });
 
         this.app.listen(`${Config.apiPort}`, () => {
-            console.log(`API rodando na porta ${global.config.porta}`);
+            console.log(`API rodando na porta ${Config.apiPort}`);
         })
 
     }
