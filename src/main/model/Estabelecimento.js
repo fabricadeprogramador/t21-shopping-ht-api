@@ -26,9 +26,10 @@ class Estabelecimento extends mongoose.Schema {
             ramo: {
                 type: String
             },
-           // produtos: [
-        //         Produto
-         //   ]
+            produtos: [{
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Produto'
+            }]
         })
         mongoose.model("Estabelecimento", this);
     }

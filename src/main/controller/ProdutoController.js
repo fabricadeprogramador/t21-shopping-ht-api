@@ -31,6 +31,8 @@ class ProdutoController {
     }
     static async editar(req, res) {
         try {
+            
+            console.log("Editando id: " + req.body._id);
             res.json(await Produto.findByIdAndUpdate(req.body._id, req.body));
         } catch (error) {
             res.status(400).send("Erro ao atualizar Produto");
@@ -38,6 +40,7 @@ class ProdutoController {
     }
     static async remover(req, res) {
         try {
+            console.log("Removendo id: " + req.body._id);
             res.json(await Produto.findByIdAndRemove(req.body._id));
         } catch (error) {
             res.status(400).send("Erro ao remover Produto");

@@ -6,7 +6,7 @@ const Cors = require("cors")
 const Config = require("../config.json");
 
 const UsuarioRoute = require("./route/UsuarioRoute");
-const EstabelecimentoRoute = require("./route/Estabelecimento");
+const EstabelecimentoRoute = require("./route/EstabelecimentoRoute");
 const ProdutoRoute = require("./route/ProdutoRoute");
 const ClienteRoute = require("./route/ClienteRoute");
 const CompraRoute = require("./route/CompraRoute");
