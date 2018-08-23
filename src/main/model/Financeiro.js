@@ -2,35 +2,24 @@
 
 const Mongoose = require('mongoose');
 
-class Financeiro extends Mongoose.Schema {
+module.exports = new class Financeiro extends Mongoose.Schema {
 
     constructor() {
 
         super({
-
-            tipo: {
-                type: String,
-                enum: ["Despesa", "Receita"],
-                default: "Despesa",
-                required: true,
-
-            },
-
             valor: {
                 type: Number,
-                min: 0,
-                required: true
+                min: 0
             },
 
             dataDeCriacao: {
                 type: Date,
-                default: new Date().getDate(),
-                required: true
+                default: new Date().getDate()
             },
 
-            estabelecimento: {
+            compra: {
                 type: Mongoose.Schema.Types.ObjectId,
-                ref: 'Estabelecimento'
+                ref: 'Compra'
             }
 
         });
@@ -39,7 +28,3 @@ class Financeiro extends Mongoose.Schema {
     } // contructor
 
 } // class
-
-new Financeiro();
-
-module.exports = Financeiro;

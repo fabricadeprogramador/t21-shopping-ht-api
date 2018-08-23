@@ -1,27 +1,34 @@
 'use strict'
 
-const mongoose = require("mongoose");
+const Mongoose = require("mongoose");
 
-class Compra extends mongoose.Schema {
+class Compra extends Mongoose.Schema {
 
     constructor() {
 
         super({
             cliente: { //nome e cpf do cliente
-                type: String
-            },
-            valor: {
-                type: String
-            },
-            data: {
-                type: Date
-            },
-            estabelecimento: { //nome do estabelecimento
-                type: String
+                type: Mongoose.Schema.Types.ObjectId,
+                ref: 'Cliente'
             },
 
+            valor: {
+                type: Number
+            },
+
+            data: {
+                type: Date,
+                default: new Date()
+            },
+
+            estabelecimento: { //nome do estabelecimento
+                type: Mongoose.Schema.Types.ObjectId,
+                ref: 'Estabelecimento'
+            }
+
         })
-        mongoose.model("Compra", this);
+
+        Mongoose.model("Compra", this);
     }
 }
 new Compra();

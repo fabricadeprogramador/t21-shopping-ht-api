@@ -12,7 +12,7 @@ class FinanceiroController {
 
             res
                 .json(await Financeiro.find({})
-                    .populate("estabelecimento"));
+                    .populate("Compra"));
 
         } catch (error) {
 
