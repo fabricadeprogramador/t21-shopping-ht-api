@@ -8,7 +8,9 @@ class CompraController {
 
     static async buscarTodos(req, res) {
         try {
-            res.json(await Compra.find({}));
+            res.json(await Compra.find({})
+                .populate("estabelecimento")
+                .populate("cliente"));
         } catch (error) {
             res.status(400).send("Erro ao buscar Compra");
         }

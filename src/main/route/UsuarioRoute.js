@@ -7,6 +7,7 @@ class UsuarioRoute{
         app.post("/usuarios", UsuarioController.adicionar);
         app.put("/usuarios", UsuarioController.editar);
         app.delete("/usuarios", UsuarioController.remover);
+        app.post("/autenticar",UsuarioController.autenticar);
     }
 }
 

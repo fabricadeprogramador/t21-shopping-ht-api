@@ -13,6 +13,16 @@ class UsuarioController {
             res.status(400).send("Erro ao buscar usuários!");
         }
     }
+
+    static async autenticar(req, res) {
+        try {
+            console.log(req.body);
+            res.json(await Usuario.findOne(req.body))
+        } catch (error) {
+            res.status(400).send("Erro ao buscar usuários!");
+        }
+    }
+
     static async adicionar(req, res) {
         try {
             res.json(await Usuario.create(req.body));

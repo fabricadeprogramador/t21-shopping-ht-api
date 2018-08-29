@@ -21,7 +21,7 @@ class Estabelecimento extends mongoose.Schema {
                 type: String
             },
             telefone: {
-                type: Number
+                type: String
             },
             ramo: {
                 type: String

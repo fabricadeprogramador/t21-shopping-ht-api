@@ -1,8 +1,11 @@
 'use strict';
 
 const ClienteModel = require("../model/Cliente");
+const UsuarioModel = require("../model/Usuario");
 const Mongoose = require("mongoose");
 const Cliente = Mongoose.model("Cliente");
+const Usuario = Mongoose.model("Usuario");
+
 
 class ClienteController {
 
@@ -26,6 +29,10 @@ class ClienteController {
 
     static async adicionar(req, res) {
         try {
+            await Usuario.create({
+                email: req.body.email,
+                senha: req.body.senha
+            })
             res.json(await Cliente.create(req.body));
         } catch (error) {
             res.status(400).send("Erro ao adicionar Cliente ");
