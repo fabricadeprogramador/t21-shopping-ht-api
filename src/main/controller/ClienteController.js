@@ -40,6 +40,8 @@ class ClienteController {
     }
     static async editar(req, res) {
         try {
+            console.log("Remover: " + req.body);
+            
             res.json(await Cliente.findByIdAndUpdate(req.body._id, req.body));
         } catch (error) {
             res.status(400).send("Erro ao atualizar Cliente");
