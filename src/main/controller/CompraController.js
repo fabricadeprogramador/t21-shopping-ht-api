@@ -23,6 +23,16 @@ class CompraController {
         }
     }
 
+    static async excluir(req, res) {
+        try {
+            res.json(await Compra.findByIdAndRemove({
+                _id: req.body._id
+            }))
+        } catch (error) {
+
+        }
+    }
+
 
 }
 module.exports = CompraController;

@@ -25,7 +25,11 @@ class FinanceiroController {
 
         try {
 
-            res.json(await Financeiro.create(req.body));
+            if (req.body._id) {
+                this.editar(req, res);
+            } else {
+                res.json(await Financeiro.create(req.body));
+            }
 
         } catch (error) {
 
