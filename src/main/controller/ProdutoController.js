@@ -31,7 +31,7 @@ class ProdutoController {
     }
     static async editar(req, res) {
         try {
-            
+
             console.log("Editando id: " + req.body._id);
             res.json(await Produto.findByIdAndUpdate(req.body._id, req.body));
         } catch (error) {

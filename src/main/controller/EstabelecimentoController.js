@@ -14,6 +14,16 @@ class EstabelecimentoController {
             res.status(400).send("Erro ao buscar estabelecimento");
         }
     }
+    static async buscarPorId(req, res) {
+        try {
+            res.json(await Estabelecimento.findOne({
+                _id: req.params.id
+            }).populate("produtos"));
+        } catch (error) {
+            res.status(400).send("Erro ao buscar estabelecimento");
+        }
+    }
+
 
     static async adicionar(req, res) {
         try {
